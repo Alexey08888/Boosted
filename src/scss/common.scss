@@ -1,1 +1,53 @@
 // Заголовки, общие БЄМ блоки и проче...
+// Заголовки, общие БЄМ блоки и проче...
+
+.scrol {
+	position: absolute;
+	right: rem(15);
+	bottom: 1%;
+	font-family: "Cormorant Upright";
+	font-weight: 700;
+	line-height: 1.75;
+	color: rgb(0, 0, 0);
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	display: grid;
+	justify-items: center;
+	row-gap: rem(24);
+	
+	&::before {
+		content: "";
+		display: block;
+		width: rem(1);
+		@include adaptiveValue("height", 61, 20);
+		//height: rem(61);
+		background: rgb(0, 0, 0);
+		background: linear-gradient(
+			180deg,
+			rgb(0, 0, 0) 0%,
+			rgba(0, 0, 0, 0.835) 50%,
+			rgba(0, 0, 0, 0.505) 75%,
+			rgba(0, 0, 0, 0.213) 100%
+		);
+		animation: scrol 1s infinite alternate;
+		@keyframes scrol {
+			0% {
+				transform: translateY(0);
+			}
+			100% {
+				transform: translateY(20px);
+			}
+		}
+	}
+	@media (max-width:$mobile){
+		font-size: 10px;  
+		@keyframes scrol {
+			0% {
+				transform: translateY(0);
+			}
+			100% {
+				transform: translateY(10px);
+			}
+	}
+}
+}
